@@ -18,6 +18,9 @@ module.exports = {
         }
       ]
     },
+    experiments: {
+      outputModule: true
+    },
     plugins: [
      new webpack.DefinePlugin({
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
