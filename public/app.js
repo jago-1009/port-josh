@@ -1,4 +1,4 @@
-import { api_key } from "./bundle.js";
+import api_key  from "./bundle.js";
 
 $(document).ready(function() {
     console.log(api_key);
