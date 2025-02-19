@@ -17,10 +17,9 @@ function loadClient() {
 
 function execute() {
   const playlistId = 'PLADY51v0-uEBXrwk64v18nCdKZpUZnoIw'; // Replace with your playlist ID
-  gapi.client.youtube.channels.list({
+  gapi.client.youtube.playlistItems.list({
       part: "snippet,contentDetails",
       playlistId: playlistId,
-      mine:true,
       maxResults: 10
   }).then(function(response) {
       console.log("YouTube Data:", response.result.items);
