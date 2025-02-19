@@ -1,4 +1,4 @@
-import test  from "./bundle.js";
+import {test}  from "./bundle.js";
 
 $(document).ready(function() {
     console.log("Document is ready!");

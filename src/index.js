@@ -4,8 +4,8 @@
    * See instructions for running APIs Explorer code samples locally:
    * https://developers.google.com/explorer-help/code-samples#javascript
    */
-  export const api_key = process.env.API_KEY;
-  export default function test() {
+   const api_key = process.env.API_KEY;
+  export function test() {
     console.log("test");
     console.log(api_key);
   }
