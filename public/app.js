@@ -27,16 +27,9 @@ function execute() {
       videos.forEach(video => {
         let title = "";
         let artist = "";
-        let description = "";
         // &#124; is the pipe character
         // &#58; is the colon character
-        if (video.snippet.title.includes("&#58;")) {
-          title = video.snippet.title.split("&#58;")[0];
-          artist = video.snippet.title.split("&#58;")[0];
-        }
-        if (title.includes("&#124;")) {
-          title = title.split("&#124;")[0];
-        }
+        console.log(video.snippet.title.split("&#124;"));
         console.log (title);
         console.log (artist);
         console.log (description);
