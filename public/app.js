@@ -37,6 +37,9 @@ function execute() {
         if (title.includes("&#124;")) {
           title = title.split("&#124;")[0];
         }
+        console.log (title);
+        console.log (artist);
+        console.log (description);
         $("#pieces").append(` <div class="piece">
             <iframe  src="https://www.youtube.com/embed/${video.id}?si=PCYc4DmLv_6xyYgJ"
                 title="YouTube video player" frameborder="0"
