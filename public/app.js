@@ -30,10 +30,15 @@ function execute() {
         let description = "";
         // &#124; is the pipe character
         // &#58; is the colon character
-        console.log(video.snippet.title.split("|"));
-        console.log (title);
-        console.log (artist);
-        console.log (description);
+        if (video.snippet.title.includes("|")) {
+          title = `<h2>${video.snippet.title.split('|')[0].trim()}</h2`
+
+          if (title.includes(":")) {
+            artist = `<h3>${title.split(":")[0].trim()}</h3>`
+            title = `<h2>${title.split(':')[1].trim()}</h2`
+          }
+        }
+
         $("#pieces").append(` <div class="piece">
             <iframe  src="https://www.youtube.com/embed/${video.id}?si=PCYc4DmLv_6xyYgJ"
                 title="YouTube video player" frameborder="0"
