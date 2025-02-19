@@ -29,6 +29,9 @@ function execute() {
         let description = "";
         // &#124; is the pipe character
         // &#58; is the colon character
+        console.log(video.snippet.title.includes("|"))
+        console.log(video.snippet.title.includes("&#124;"))
+
         if (video.snippet.title.includes("|")) {
           title = `<h2>${video.snippet.title.split('|')[0].trim()}</h2`
           console.debug(title)
