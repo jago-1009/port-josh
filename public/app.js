@@ -1,7 +1,6 @@
-import api_key  from "./bundle.js";
+import * as bundle  from "./bundle.js";
 
 $(document).ready(function() {
-    console.log(api_key);
-    console.log("ready!");
-    loadClient().then(authenticate).then(execute);
+    console.log("Document is ready!");
+    bundle.test();
 });

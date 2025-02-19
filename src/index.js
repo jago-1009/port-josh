@@ -5,6 +5,10 @@
    * https://developers.google.com/explorer-help/code-samples#javascript
    */
   export const api_key = process.env.API_KEY;
+  export function test() {
+    console.log("test");
+    console.log(api_key);
+  }
   export function authenticate() {
     return gapi.auth2.getAuthInstance()
         .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
