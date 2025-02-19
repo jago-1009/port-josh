@@ -6,5 +6,3 @@
    */
   export const api_key = process.env.API_KEY;
 
-  console.log("test");
-  console.log(api_key);
