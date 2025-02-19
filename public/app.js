@@ -19,7 +19,6 @@ function execute() {
   const playlistId = 'PLADY51v0-uEBXrwk64v18nCdKZpUZnoIw'; // Replace with your playlist ID
   gapi.client.youtube.channels.list({
       part: "snippet,contentDetails",
-      mine: false, // You don't need user authentication, so set this to false
       playlistId: playlistId,
       maxResults: 10
   }).then(function(response) {
