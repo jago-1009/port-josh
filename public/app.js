@@ -20,6 +20,7 @@ function execute() {
   gapi.client.youtube.channels.list({
       part: "snippet,contentDetails",
       playlistId: playlistId,
+      mine:true,
       maxResults: 10
   }).then(function(response) {
       console.log("YouTube Data:", response.result.items);
