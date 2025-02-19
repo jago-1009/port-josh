@@ -170,3 +170,148 @@ height: 100%;
 .bio-text p {
     width: 80%;
 }
+.pieces {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.pieces h1 {
+    margin-top: 30px;
+    font-family: var(--base-font);
+    color: var(--base-black);
+}
+.piece {
+
+    margin: 20px;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 10px;
+    flex-direction: column;
+    max-width: 350px;
+    max-height: 350px;
+}
+.piece * {
+    font-family: var(--base-font);
+    color:var(--base-black)
+}
+.piece div {
+    padding: 20px;
+}
+.piece iframe {
+  
+    padding:20px;
+    height:50%;
+    width: 100%;
+    border-radius: 50px;
+}
+.page-title {
+    font-family: var(--base-font);
+    color: var(--base-black);
+    text-align: center;
+    margin-top: 30px;
+}
+.contact {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.contact form {
+   width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contact form label {
+    font-family: var(--base-font);
+    color: var(--base-black);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.contact input {
+    width: 200px;
+
+}
+.contact form label textarea {
+    width: 60%;
+    height:100%;
+    min-height:200px;
+    min-width: 200px;
+
+}
+.contact p {
+    font-family: var(--base-font);
+    color: var(--base-black);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.contact button {
+    height:100%;
+    min-height:50px;
+    width: 30%;
+    min-width: 100px;
+    margin-top:24px;
+    background-color: var(--base-black);
+    color: var(--base-white);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--base-font);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.contact button:hover {
+    background-color: var(--base-white);
+    color: var(--base-black);
+    border: 1px solid var(--base-black);
+}
+@media screen and (max-width: 768px) {
+    .bio-body {
+        flex-direction: column;
+    }
+    .bio-img {
+        height: 50%;
+    }
+    .bio-text {
+        height: 50%;
+    }
+    .bio-text p {
+        width: 100%;
+    }
+    .piece {
+        max-height: none;
+        max-width: none;
+        flex-direction: column;
+        width: auto;
+    }
+    .piece iframe {
+        height: 50%;
+        width: 100%;
+    }
+    .piece div {
+        height: 50%;
+        width: 100%;
+    }
+    .pieces {
+        height: auto;
+    }
+}

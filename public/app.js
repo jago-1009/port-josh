@@ -23,6 +23,10 @@ function execute() {
       maxResults: 10
   }).then(function(response) {
       console.log("YouTube Data:", response.result.items);
+      let videos = response.result.items;
+      videos.forEach(video => {
+          console.log(video.snippet.title);
+      });
   }, function(err) {
       console.error("Error executing request", err);
   });

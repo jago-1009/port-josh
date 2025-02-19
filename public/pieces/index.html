@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
     <nav>
         <ul>
@@ -17,10 +19,45 @@
             <li><a href="/pieces">See me Play</a></li>
             <li><a href="/contact">Contact Me</a></li>
         </ul>
-        
+
     </nav>
-    <main>
-        <iframe data-aos-duration="1500" data-aos="fade-right" class="pdf" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" height="80%" width="80%"></iframe>
+    <h1 class="page-title">See me play</h1>
+
+    <main class="pieces">
+
+        <div class="piece left">
+        <iframe  src="https://www.youtube.com/embed/dooJY-l0Mt0?si=PCYc4DmLv_6xyYgJ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="piece-info">
+                <h2>Title</h2>
+                <h3>By: Artist</h3>
+                <p>Description of piece</p>
+            </div>
+        </div>
+        <div class="piece right">
+            <iframe  src="https://www.youtube.com/embed/dooJY-l0Mt0?si=PCYc4DmLv_6xyYgJ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="piece-info">
+                    <h2>Title</h2>
+                    <h3>By: Artist</h3>
+                    <p>Description of piece</p>
+                </div>
+            </div>
+            <div class="piece left">
+                <iframe  src="https://www.youtube.com/embed/dooJY-l0Mt0?si=PCYc4DmLv_6xyYgJ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="piece-info">
+                        <h2>Title</h2>
+                        <h3>By: Artist</h3>
+                        <p>Description of piece</p>
+                    </div>
+                </div>
     </main>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://apis.google.com/js/api.js"></script>
@@ -31,4 +68,5 @@
         AOS.init();
     </script>
 </body>
+
 </html>
