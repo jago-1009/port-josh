@@ -48,6 +48,9 @@ nav {
 
 
 }
+.mobile {
+    display:none;
+}
 nav ul {
     list-style: none;
     display: flex;
@@ -313,5 +316,25 @@ height: 100%;
     }
     .pieces {
         height: auto;
+    }
+    .desktop {
+        display:none !important;
+    }
+    .mobile {
+        display: flex !important;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        height: auto;
+    }
+    .mobile ul {
+        width: 100%;
+        flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+    .mobile ul li {
+        margin:20px;
+        font-size: 24px;
     }
 }
