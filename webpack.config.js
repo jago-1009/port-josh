@@ -4,7 +4,10 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/public'
+    path: __dirname + '/public',
+    library: {
+      type:'module'
+    }
     },
     module: {
       rules: [
