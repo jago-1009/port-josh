@@ -3,6 +3,7 @@ import {api_key}  from "./bundle.js";
 $(document).ready(function() {
     console.log("Document is ready!");
     console.log(api_key);
+    gisLogin();
  
 });
  
@@ -15,6 +16,7 @@ function gisLogin() {
               accessToken = response.access_token;
               console.log("Sign-in successful");
               loadClient(); // Load YouTube API after authentication
+              execute(); // Execute the API request
           } else {
               console.error("Authentication failed");
           }
