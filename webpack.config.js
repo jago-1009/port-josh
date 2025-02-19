@@ -16,7 +16,9 @@ module.exports = {
       ]
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin()
+     new webpack.definePlugin({
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
+  })
     ],
     devServer: {
       contentBase: './public',
