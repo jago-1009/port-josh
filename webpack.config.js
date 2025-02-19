@@ -1,4 +1,5 @@
 // webpack.config.js
+const { EnvironmentPlugin } = require('webpack');
 
 module.exports = {
   // ... other configurations
