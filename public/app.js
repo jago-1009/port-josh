@@ -37,7 +37,7 @@ function execute() {
 
           if (title.includes(":")) {
             artist = `<h3>${title.split(":")[0].trim()}</h3>`
-            title = `<h2>${title.split(':')[1].trim()}</h2`
+            title = `<h2>By: ${title.split(':')[1].trim()}</h2`
             console.debug("ART", artist, "TITLE", title)
           }
         }
@@ -46,7 +46,7 @@ function execute() {
         }
 
         $("#pieces").append(` <div class="piece">
-            <iframe  src="https://www.youtube.com/embed/${video.id}?si=PCYc4DmLv_6xyYgJ"
+            <iframe  src="https://www.youtube.com/embed/${video.contentDetails.videoId}?si=PCYc4DmLv_6xyYgJ"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

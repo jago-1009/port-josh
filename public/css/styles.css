@@ -196,7 +196,6 @@ height: 100%;
     border-radius: 10px;
     flex-direction: column;
     max-width: 350px;
-    max-height: 350px;
 }
 .piece * {
     font-family: var(--base-font);
