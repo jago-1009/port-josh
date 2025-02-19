@@ -29,8 +29,7 @@ function execute() {
         let description = "";
         // &#124; is the pipe character
         // &#58; is the colon character
-        console.log(video.snippet.title.includes("|"))
-        console.log(video.snippet.title.includes("&#124;"))
+   
 
         if (video.snippet.title.includes("|")) {
           title = `<h2>${video.snippet.title.split('|')[0].trim()}</h2`
@@ -42,6 +41,9 @@ function execute() {
             console.debug("ART", artist, "TITLE", title)
           }
         }
+        else {
+          title = video.snippet.title
+        }
 
         $("#pieces").append(` <div class="piece">
             <iframe  src="https://www.youtube.com/embed/${video.id}?si=PCYc4DmLv_6xyYgJ"
@@ -50,7 +52,7 @@ function execute() {
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="piece-info">
                     <h2>${title}</h2>
-                    <h3>By: ${artist}</h3>
+                    ${artist}
                     <p>${video.snippet.description}</p>
                 </div>
             </div>`)
