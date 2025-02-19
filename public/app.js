@@ -5,32 +5,42 @@ $(document).ready(function() {
     console.log(api_key);
  
 });
- function authenticate() {
-    return gapi.auth2.getAuthInstance()
-        .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
-        .then(function() { console.log("Sign-in successful"); },
-              function(err) { console.error("Error signing in", err); });
-  }
-   function loadClient() {
-    gapi.client.setApiKey(api_key);
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
-   function execute() {
-    return gapi.client.youtube.playlistItems.list({
-      "part": [
-        "snippet,contentDetails"
-      ],
-      "playlistId": "PLADY51v0-uEBXrwk64v18nCdKZpUZnoIw"
-    })
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "581903922488-giinvk56chi3ee548h688ns14gk00ole.apps.googleusercontent.com"});
+ 
+function gisLogin() {
+  google.accounts.oauth2.initTokenClient({
+      client_id: "581903922488-giinvk56chi3ee548h688ns14gk00ole.apps.googleusercontent.com",
+      scope: "https://www.googleapis.com/auth/youtube.readonly",
+      callback: (response) => {
+          if (response.access_token) {
+              accessToken = response.access_token;
+              console.log("Sign-in successful");
+              loadClient(); // Load YouTube API after authentication
+          } else {
+              console.error("Authentication failed");
+          }
+      }
+  }).requestAccessToken();
+}
+function loadClient() {
+  gapi.load("client", () => {
+      gapi.client.setApiKey(api_key);
+      gapi.client.load("youtube", "v3", () => {
+          console.log("GAPI client loaded for YouTube API");
+      });
   });
+}
+function execute() {
+  if (!accessToken) {
+      console.error("User is not authenticated");
+      return;
+  }
+
+  gapi.client.youtube.channels.list({
+      part: "snippet,contentDetails,statistics",
+      mine: true
+  }).then(function(response) {
+      console.log("YouTube Data:", response);
+  }, function(err) {
+      console.error("Error executing request", err);
+  });
+}
