@@ -1,48 +1,31 @@
-import {api_key}  from "./bundle.js";
+import { api_key } from "./bundle.js";
 
-$(document).ready(function() {
-    console.log("Document is ready!");
-    console.log(api_key);
-    gisLogin();
- 
+$(document).ready(function () {
+  console.log("Document is ready!");
+  console.log(api_key);
+  loadClient();
 });
- 
-function gisLogin() {
-  google.accounts.oauth2.initTokenClient({
-      client_id: "581903922488-giinvk56chi3ee548h688ns14gk00ole.apps.googleusercontent.com",
-      scope: "https://www.googleapis.com/auth/youtube.readonly",
-      callback: (response) => {
-          if (response.access_token) {
-              accessToken = response.access_token;
-              console.log("Sign-in successful");
-              loadClient(); // Load YouTube API after authentication
-              execute(); // Execute the API request
-          } else {
-              console.error("Authentication failed");
-          }
-      }
-  }).requestAccessToken();
-}
 function loadClient() {
   gapi.load("client", () => {
-      gapi.client.setApiKey(api_key);
+      gapi.client.setApiKey(api_key); // Use your API key here
       gapi.client.load("youtube", "v3", () => {
           console.log("GAPI client loaded for YouTube API");
+          execute();  // Call execute() to fetch data once client is loaded
       });
   });
 }
-function execute() {
-  if (!accessToken) {
-      console.error("User is not authenticated");
-      return;
-  }
 
+function execute() {
+  const playlistId = 'PLADY51v0-uEBXrwk64v18nCdKZpUZnoIw'; // Replace with your playlist ID
   gapi.client.youtube.channels.list({
-      part: "snippet,contentDetails,statistics",
-      mine: true
+      part: "snippet,contentDetails",
+      mine: false, // You don't need user authentication, so set this to false
+      playlistId: playlistId,
+      maxResults: 10
   }).then(function(response) {
-      console.log("YouTube Data:", response);
+      console.log("YouTube Data:", response.result.items);
   }, function(err) {
       console.error("Error executing request", err);
   });
 }
+
