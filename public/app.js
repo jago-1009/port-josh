@@ -25,6 +25,29 @@ function execute() {
       console.log("YouTube Data:", response.result.items);
       let videos = response.result.items;
       videos.forEach(video => {
+        let title = "";
+        let artist = "";
+        let description = "";
+        // &#124; is the pipe character
+        // &#58; is the colon character
+        if (video.snippet.title.includes("&#58;")) {
+          title = video.snippet.title.split("&#58;")[0];
+          artist = video.snippet.title.split("&#58;")[0];
+        }
+        if (title.includes("&#124;")) {
+          title = title.split("&#124;")[0];
+        }
+        $("#pieces").append(` <div class="piece">
+            <iframe  src="https://www.youtube.com/embed/${video.id}?si=PCYc4DmLv_6xyYgJ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="piece-info">
+                    <h2>${title}</h2>
+                    <h3>By: ${artist}</h3>
+                    <p>${video.snippet.description}</p>
+                </div>
+            </div>`)
           console.log(video.snippet.title);
       });
   }, function(err) {
