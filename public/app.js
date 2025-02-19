@@ -1,8 +1,9 @@
-import {test}  from "./bundle.js";
+import {api_key}  from "./bundle.js";
 
 $(document).ready(function() {
     console.log("Document is ready!");
-    test();
+    console.log(api_key);
+ 
 });
  function authenticate() {
     return gapi.auth2.getAuthInstance()
