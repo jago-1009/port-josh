@@ -22,7 +22,6 @@ function execute() {
       playlistId: playlistId,
       maxResults: 10
   }).then(function(response) {
-      console.log("YouTube Data:", response.result.items);
       let videos = response.result.items;
       videos.forEach(video => {
         let title = "";
@@ -32,10 +31,12 @@ function execute() {
         // &#58; is the colon character
         if (video.snippet.title.includes("|")) {
           title = `<h2>${video.snippet.title.split('|')[0].trim()}</h2`
+          console.debug(title)
 
           if (title.includes(":")) {
             artist = `<h3>${title.split(":")[0].trim()}</h3>`
             title = `<h2>${title.split(':')[1].trim()}</h2`
+            console.debug("ART", artist, "TITLE", title)
           }
         }
 
@@ -50,7 +51,6 @@ function execute() {
                     <p>${video.snippet.description}</p>
                 </div>
             </div>`)
-          console.log(video.snippet.title);
       });
   }, function(err) {
       console.error("Error executing request", err);
