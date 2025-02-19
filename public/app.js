@@ -30,7 +30,7 @@ function execute() {
         let description = "";
         // &#124; is the pipe character
         // &#58; is the colon character
-        console.log(video.snippet.title.split("&#124;"));
+        console.log(video.snippet.title.split("|"));
         console.log (title);
         console.log (artist);
         console.log (description);
