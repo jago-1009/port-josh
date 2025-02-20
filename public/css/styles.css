@@ -306,8 +306,9 @@ height: 100%;
     }
     .bio-img {
         width: 80%;
-        padding:20px;
+        margin:20px;
         height: 80%;
+        padding: 10px;
     
     }
     .bio-text {
