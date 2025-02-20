@@ -159,7 +159,7 @@ height: 100%;
     
 }
 .bio-img {
-    height: calc(100% - 100px);
+    width:  50%;
     padding:10px;
     padding-left: 10%;
 }
@@ -299,13 +299,13 @@ height: 100%;
     }
     .bio-img {
         padding:20px;
-        height:100%;
+        width: 80%;
     }
     .bio-text {
         
     }
     .bio-text p {
-        width: 100svh;
+        width: 60svh;
     }
     .piece {
         max-height: none;
