@@ -159,9 +159,10 @@ height: 100%;
     
 }
 .bio-img {
-    width:  50%;
+    width:  30rem;
     padding:10px;
     padding-left: 10%;
+    object-fit:cover;
 }
 .bio-text {
     font-family: var(--base-font);
@@ -299,13 +300,10 @@ height: 100%;
     }
     .bio-img {
         padding:20px;
-        width: 80%;
+        height: 30%;
     }
     .bio-text {
         
-    }
-    .bio {
-        display: block;
     }
     .bio-text p {
         width: 60svh;
