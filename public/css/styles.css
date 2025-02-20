@@ -290,6 +290,9 @@ height: 100%;
 .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
     background-color: var(--base-white) !important;
 }
+.about {
+    height: 100%;
+}
 @media screen and (max-width: 768px) {
     .bio-body {
         flex-direction: column;
