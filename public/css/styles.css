@@ -25,6 +25,10 @@
  padding: 0;
  box-sizing: border-box;
 }
+.desktop {
+    position: relative;
+    z-index: 10;
+}
 html, body {
     overflow-x: hidden;
     background-color: var(--base-grey);
@@ -163,6 +167,8 @@ height: 100%;
     padding:10px;
     padding-left: 10%;
     object-fit:cover;
+    position: relative;
+    z-index: 5;
 }
 .bio-text {
     font-family: var(--base-font);
@@ -299,8 +305,10 @@ height: 100%;
         flex-direction: column;
     }
     .bio-img {
+        width: 80%;
         padding:20px;
-        height: 30%;
+        height: 80%;
+    
     }
     .bio-text {
         
