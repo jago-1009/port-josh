@@ -299,7 +299,6 @@ height: 100%;
     }
     .bio-img {
         padding:20px;
-        height:-webkit-fill-available !important;
     }
     .bio-text {
         
