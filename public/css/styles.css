@@ -331,7 +331,7 @@ height: 100%;
         justify-content: flex-end;
         flex-direction: column;
         align-items: flex-end;
-        height: auto;
+        height: 60px;
         z-index: 999;
     }
     .mobile ul {
