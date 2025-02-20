@@ -304,6 +304,9 @@ height: 100%;
     .bio-text {
         
     }
+    .bio {
+        display: block;
+    }
     .bio-text p {
         width: 60svh;
     }
