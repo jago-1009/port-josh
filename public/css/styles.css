@@ -333,6 +333,7 @@ height: 100%;
         align-items: flex-end;
         height: 60px;
         z-index: 999;
+        position: relative;
     }
     .mobile ul {
         position: absolute;
