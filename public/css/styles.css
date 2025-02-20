@@ -305,7 +305,7 @@ height: 100%;
         
     }
     .bio-text p {
-        width: 100%;
+        width: 100svh;
     }
     .piece {
         max-height: none;
