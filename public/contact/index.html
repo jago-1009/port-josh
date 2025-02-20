@@ -5,20 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
+    <link href="../css/hamburgers.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/styles.css">
+
 </head>
 
 <body>
-    <nav>
+    <nav class="desktop">
         <ul>
             <li><a href="/">Home</a></li>
-
             <li><a href="/about">About Me</a></li>
             <li><a href="/works">Resume</a></li>
             <li><a href="/pieces">See me Play</a></li>
             <li><a href="/contact">Contact Me</a></li>
         </ul>
-
+        
+    </nav>
+    
+    <nav class="mobile">
+       
+        
+        <button id="hamburger" class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          <ul id="mobile-nav" style="display: none;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/works">Resume</a></li>
+            <li><a href="/pieces">See me Play</a></li>
+            <li><a href="/contact">Contact Me</a></li>
+        </ul>
     </nav>
     <h1 class="page-title">Contact Me</h1>
 
@@ -38,6 +57,10 @@
             <button type="submit">Send</button>
         </form>
     </div>
+    <script type="module" src="../lib/jquery-3.7.1.js"></script>
+
+    <script type="module" src="../app.js"></script>
+
 </body>
 
 </html>
