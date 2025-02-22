@@ -1,6 +1,7 @@
 // webpack.config.js
 const webpack = require('webpack');
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -27,8 +28,13 @@ module.exports = {
   })
     ],
     devServer: {
-      contentBase: './public',
+      port: 3000,
+
+      static: {
+        directory: __dirname + '/public',
+        
+      },
       hot: true
-    }
+    },
   
 };
