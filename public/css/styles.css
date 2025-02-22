@@ -25,6 +25,12 @@
  padding: 0;
  box-sizing: border-box;
 }
+.sub-title {
+    color:var(--base-black);
+    font-family: var(--base-font);
+    font-size: 24px;
+    text-align: center ;
+}
 .desktop {
     position: relative;
     z-index: 10;
