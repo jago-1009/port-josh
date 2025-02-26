@@ -12,3 +12,5 @@ const getRecords = async (base) => {
 	console.log(data)
 	return data.records;
 };
+
+getRecords();
