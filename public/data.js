@@ -9,19 +9,21 @@ const getRecords = async (base) => {
 		},
 	});
 	const data = await response.json();
-	let fileURL = data[0].fields.data
-	let aboutMeBlurb = data[1].fields.data;
-	console.log(fileURL)
+	// let fileURL = data[0].fields.data
+	// let aboutMeBlurb = data[1].fields.data;
+	console.log(data)
+	console.log(data[0])
+	console.log(data[0].fields)
 	
-	let resume = document.getElementById('resume')
-	if (resume) {
-		return resume.setAttribute('src', fileURL)
-	}
-	let blurb = document.getElementById('blurb');
-	if (blurb) {
-		return blurb.innerHTML = aboutMeBlurb;
+	// let resume = document.getElementById('resume')
+	// if (resume) {
+	// 	return resume.setAttribute('src', fileURL)
+	// }
+	// let blurb = document.getElementById('blurb');
+	// if (blurb) {
+	// 	return blurb.innerHTML = aboutMeBlurb;
 
-	}
+	// }
 };
 
 getRecords();
