@@ -9,8 +9,19 @@ const getRecords = async (base) => {
 		},
 	});
 	const data = await response.json();
-	console.log(data)
-	return data.records;
+	let fileURL = data[0].fields.data
+	let aboutMeBlurb = data[1].fields.data;
+	console.log(fileURL)
+	
+	let resume = document.getElementById('resume')
+	if (resume) {
+		return resume.setAttribute('src', fileURL)
+	}
+	let blurb = document.getElementById('blurb');
+	if (blurb) {
+		return blurb.innerHTML = aboutMeBlurb;
+
+	}
 };
 
 getRecords();
