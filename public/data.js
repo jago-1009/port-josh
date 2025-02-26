@@ -9,5 +9,6 @@ const getRecords = async (base) => {
 		},
 	});
 	const data = await response.json();
+	console.log(data)
 	return data.records;
 };
