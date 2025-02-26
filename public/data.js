@@ -13,4 +13,4 @@ const getRecords = async (base) => {
 	return data.records;
 };
 
-getRecords();
+getRecords(airtable_key);
