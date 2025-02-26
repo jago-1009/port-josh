@@ -1,4 +1,4 @@
-import { data } from "./bundle.js";
+import { api_key } from "./bundle.js";
 
 $(document).ready(function () {
   console.log("Document is ready!");
@@ -6,7 +6,7 @@ $(document).ready(function () {
 });
 function loadClient() {
   gapi.load("client", () => {
-      gapi.client.setApiKey(data.api_key); // Use your API key here
+      gapi.client.setApiKey(api_key); // Use your API key here
       gapi.client.load("youtube", "v3", () => {
           console.log("GAPI client loaded for YouTube API");
           execute();  // Call execute() to fetch data once client is loaded
