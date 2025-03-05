@@ -11,3 +11,5 @@ const getRecords = async (base) => {
 	const data = await response.json();
 	return data.records;
 };
+
+getRecords();
